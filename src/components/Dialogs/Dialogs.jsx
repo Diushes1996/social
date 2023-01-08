@@ -6,14 +6,12 @@ import { addMessageActionCreator, updateNewMessageTextCreator } from '../../redu
 
 const Dialogs = (props) => {
 
-    let newMessageElement = React.createRef();
-
     let addMessage = () => {
         props.dispatch(addMessageActionCreator())
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
+    let onMessageChange = (e) => {
+        let text = e.target.value;
         props.dispatch(updateNewMessageTextCreator(text))
     }
 
@@ -28,7 +26,7 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messageElements}
-                <textarea onChange={onMessageChange} ref={newMessageElement} value={props.newMessageText}></textarea>
+                <textarea onChange={onMessageChange} value={props.newMessageText}></textarea>
                 <button onClick={addMessage}>Send message</button>
             </div>
         </div>
