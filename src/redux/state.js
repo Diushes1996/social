@@ -1,9 +1,6 @@
-// const ADD_POST = 'ADD-POST';
-// const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-// const ADD_MESSAGE = 'ADD-MESSAGE';
-// const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
 import profileReducer from "./profieReducer";
 import dialogsReducer from "./dialogsReducer";
+import sidebarReducer from "./sidebarReducer";
 
 let store = {
     _callSubscriber() {
@@ -37,6 +34,9 @@ let store = {
                 {id: 5, message: 'yo'}
             ],
             newMessageText: ''
+        },
+        sidebarPage: {
+
         }
     },
 
@@ -48,16 +48,13 @@ let store = {
         this._callSubscriber = observer;
     },
 
-    dispatch(action) {
+    dispatch(action) {  //action это объект содержащий свойство type
         this._state.profilePage = profileReducer(this._state.profilePage, action);
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.sidebarPage = sidebarReducer(this._state.sidebarPage);
 
         this._callSubscriber(this._state)
     }
 }
 
-// export const addPostActionCreator = () => ({type: 'ADD-POST'});
-// export const updateNewPostTextActionCreator = (text) => ({type: 'UPDATE-NEW-POST-TEXT', newText: text});
-// export const addMessageActionCreator = () => ({type: 'ADD-MESSAGE'});
-// export const updateNewMessageTextCreator = (text) => ({type: 'UPDATE-NEW-MESSAGE-TEXT', newText: text});
 export default store;
