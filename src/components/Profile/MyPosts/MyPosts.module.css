@@ -1,0 +1,9 @@
+.buttonPosts {
+    width: 200px;
+    height: 40px;
+    background-color: #1636d9;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
