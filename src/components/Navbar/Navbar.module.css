@@ -1,8 +1,10 @@
 .nav {
   grid-area: nav;
-  background-color: goldenrod;
+  background-color: #3b3b3b;
+  border: 1px solid white;
+  color: #d1d1d1;
 }
 
 .active_link {
-  color: red;
+  color: white;
 }

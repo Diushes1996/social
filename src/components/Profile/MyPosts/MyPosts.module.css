@@ -1,9 +1,25 @@
 .buttonPosts {
     width: 200px;
     height: 40px;
-    background-color: #1636d9;
+    margin: 10px 0px;
+    background-color: #737373;
     color: white;
     border: 1px solid white;
     border-radius: 10px;
     cursor: pointer;
+}
+
+h3 {
+    color: white;
+}
+
+.postInput {
+    width: 50%;
+    height: 30px;
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #474747;
+    color: white;
+    font-size: 18px;
 }

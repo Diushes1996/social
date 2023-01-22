@@ -6,7 +6,7 @@ import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../r
 const MyPosts = (props) => {
 
   let addPost = () => {
-    props.dispatch(addPostActionCreator());
+    props.dispatch(addPostActionCreator()); //метод dispatch прнимает в себя action - это объект, у которого есть свойство type
   }
 
   let onPostChange = (e) => {
@@ -21,7 +21,7 @@ const MyPosts = (props) => {
       <h3>My posts</h3>
       <div>
         <div>
-          <textarea onChange={onPostChange} value={props.newPostText}/>
+          <input onChange={onPostChange} value={props.newPostText} className={s.postInput}/>
         </div>
         <div>
           <button onClick={addPost} className={s.buttonPosts}>Add post</button>
