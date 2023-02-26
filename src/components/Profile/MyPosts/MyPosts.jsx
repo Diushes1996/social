@@ -1,20 +1,23 @@
 import Post from './Post/Post';
-import React from 'react';
 import s from './MyPosts.module.css'
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profieReducer';
+// import { useMemo } from 'react';
 
 const MyPosts = (props) => {
 
+  console.log(props.state)
+
   let addPost = () => {
-    props.dispatch(addPostActionCreator()); //метод dispatch прнимает в себя action - это объект, у которого есть свойство type
+    props.addPost();
   }
 
   let onPostChange = (e) => {
     let text = e.target.value;
-    props.dispatch(updateNewPostTextActionCreator(text));
+    props.onPostChange(text);
   }
 
-  let postElements = [props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)]
+  let postElements = [props.state.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)]
+
+  // let postElements = useMemo(() => [props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)], [props.posts])
 
   return (
     <div>
