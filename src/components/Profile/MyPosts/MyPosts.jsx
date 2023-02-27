@@ -4,7 +4,7 @@ import s from './MyPosts.module.css'
 
 const MyPosts = (props) => {
 
-  console.log(props.state)
+  // console.log(props.state)
 
   let addPost = () => {
     props.addPost();
