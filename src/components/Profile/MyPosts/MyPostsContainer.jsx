@@ -1,19 +1,39 @@
+import { connect } from 'react-redux';
 import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/profieReducer';
 import MyPosts from './MyPosts';
 
-const MyPostsContainer = (props) => {
+// const MyPostsContainer = (props) => {
 
-  let addPost = () => {
-    props.dispatch(addPostActionCreator()); //метод dispatch прнимает в себя action - это объект, у которого есть свойство type
+//   let addPost = () => {
+//     props.dispatch(addPostActionCreator()); //метод dispatch прнимает в себя action - это объект, у которого есть свойство type
+//   }
+
+//   let onPostChange = (text) => {
+//     props.dispatch(updateNewPostTextActionCreator(text));
+//   }
+
+//   return (
+//     <MyPosts addPost={addPost} onPostChange={onPostChange} state={props.state}/>
+//   )
+// }
+
+let mapStateToProps = (state) => {
+  return {
+    state: state
   }
-
-  let onPostChange = (text) => {
-    props.dispatch(updateNewPostTextActionCreator(text));
-  }
-
-  return (
-    <MyPosts addPost={addPost} onPostChange={onPostChange} state={props.state}/>
-  )
 }
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    addPost: () => { 
+      dispatch(addPostActionCreator()) 
+    },
+    onPostChange: (text) => { 
+      dispatch(updateNewPostTextActionCreator(text)) 
+    }
+  }
+}
+
+const MyPostsContainer = connect (mapStateToProps, mapDispatchToProps)(MyPosts)
 
 export default MyPostsContainer;
