@@ -4,8 +4,6 @@ import Message from './Message/Message'
 
 const Dialogs = (props) => {
 
-    console.log(props.state);
-
     let addMessage = () => {
         props.addMessage()
     }

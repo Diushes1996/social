@@ -15,18 +15,17 @@ const profileReducer = (state = initialState, action) => {
 
     switch (action.type) {
         case ADD_POST:
-            let newPost = {
-                id: 5,
-                message: state.newPostText,
-                likesCount: 0
+            return {
+                ...state, //делаем поверхностную копию state
+                posts: [...state.posts, {id: 5, message: state.newPostText, likesCount: 0}], //делаем копию всех постов и добавлем новый пост в массив в виде объекта (его кстати можно вынести в отдельную переменную)
+                newPostText: ''
             }
-            state.posts.push(newPost);
-            state.newPostText = '';
-            console.log(state.posts);
-            return state;
+            
         case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
+            return {
+                ...state, //делаем поверхностную копию стейта
+                newPostText: action.newText // остлеживаем изменение value в input
+            }
         default:
             return state;
     }

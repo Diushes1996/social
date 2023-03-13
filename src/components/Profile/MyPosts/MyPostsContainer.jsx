@@ -19,13 +19,14 @@ import MyPosts from './MyPosts';
 
 let mapStateToProps = (state) => {
   return {
-    state: state
+    state: state,
+    newPostText: state.profilePage.newPostText
   }
 }
 
 let mapDispatchToProps = (dispatch) => {
   return {
-    addPost: () => { 
+    addPost: () => {
       dispatch(addPostActionCreator()) 
     },
     onPostChange: (text) => { 
