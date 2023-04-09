@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className={s.nav}>
       <div>
-        <NavLink to="/profile" className={({ isActive }) => isActive ? s.active_link : ''}>Profile</NavLink>
+        <NavLink to="/" className={({ isActive }) => isActive ? s.active_link : ''}>Profile</NavLink>
       </div>
       <div>
         <NavLink to="/dialogs" className={({ isActive }) => isActive ? s.active_link : ''}>Messages</NavLink>
