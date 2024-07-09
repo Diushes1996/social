@@ -1,36 +1,31 @@
 import React from "react";
 import "./App.css";
-import ProfileContainer from './components/Profile/ProfileContainer'
+import ProfileContainer from "./components/Profile/ProfileContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
-import UsersContainer from "./components/Users/UsersContainer";
+import { UsersContainer } from "./components/Users/UsersContainer";
 import Layout from "./components/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 
 const App = (props) => {
-
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={
-            <ProfileContainer
-              state={props.state}
-              dispatch={props.dispatch}
-            />}/>
-          <Route path="/dialogs" element={
-            <DialogsContainer
-              state={props.state}
-              dispatch={props.dispatch}
-            />}
+          <Route
+            index
+            element={
+              <ProfileContainer state={props.state} dispatch={props.dispatch} />
+            }
           />
-          <Route path="/users" element={
-            <UsersContainer
-              state={props.state}
-              dispatch={props.dispatch}
-            />}
+          <Route
+            path="/dialogs"
+            element={
+              <DialogsContainer state={props.state} dispatch={props.dispatch} />
+            }
           />
-          <Route path="*" element={<NotFoundPage/>}/>
+          <Route path="/users" element={<UsersContainer />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
