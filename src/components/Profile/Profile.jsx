@@ -1,8 +1,8 @@
 import MyPostsContainer from './MyPosts/MyPostsContainer';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import { ProfileInfo } from './ProfileInfo/ProfileInfo.jsx';
 import s from './Profile.module.css';
 
-const Profile = (props) => {
+export const Profile = (props) => {
   return (
     <div className={s.profilePage}>
       <ProfileInfo profile={props.profile}/>
@@ -10,5 +10,3 @@ const Profile = (props) => {
     </div>
   )
 }
-
-export default Profile;

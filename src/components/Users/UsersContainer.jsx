@@ -1,6 +1,6 @@
 import React from "react";
 import { Users } from "./Users";
-import Preloader from "./../common/Preloader/Preloader";
+import { Preloader } from "./../common/Preloader/Preloader.js";
 import { useFetchData } from "./hooks/useFetchData";
 import { Pagination } from "./Pagination";
 import s from "./Users.module.css";

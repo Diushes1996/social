@@ -1,7 +1,7 @@
-import Preloader from "../../common/Preloader/Preloader";
+import { Preloader } from "../../common/Preloader/Preloader.js";
 import s from "./ProfileInfo.module.css"
 
-const ProfileInfo = (props) => {
+export const ProfileInfo = (props) => {
     if (!props.profile) {
       return <Preloader/>
     }
@@ -17,5 +17,3 @@ const ProfileInfo = (props) => {
       </>
     )
   }
-
-  export default ProfileInfo;
