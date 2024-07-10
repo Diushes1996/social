@@ -6,15 +6,13 @@ import Navbar from "./Navbar/Navbar";
 const Layout = () => {
   return (
     <>
-      <div className="app-wrapper">
-        <div className="app-wrapper-content">
-          <Header />
+      <div className="app_wrapper">
+      <Header />
+      
+        <div className="app_wrapper_content">
           <Navbar />
-        </div>
-        <main>
           <Outlet />
-        </main>
-        <footer>My social networking site</footer>
+        </div>
       </div>
     </>
   )

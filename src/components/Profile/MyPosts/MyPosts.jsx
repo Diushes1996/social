@@ -16,9 +16,7 @@ const MyPosts = (props) => {
   }
 
   let postElements = [props.state.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)]
-
-  // let postElements = useMemo(() => [props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)], [props.posts])
-
+  
   return (
     <div>
       <h3>My posts</h3>

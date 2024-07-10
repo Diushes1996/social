@@ -11,9 +11,9 @@ export const Pagination = ({ totalUsersCount, currentPage, setPageNumber }) => {
       pages.push(i);
     }
 
-    const curPF = currentPage - 5 < 0 ? 0 : currentPage - 5;
-    const curPL = currentPage + 5;
-    return pages.slice(curPF, curPL);
+    const curPFirst = currentPage - 5 < 0 ? 0 : currentPage - 5;
+    const curPLast = currentPage + 5;
+    return pages.slice(curPFirst, curPLast);
   }, [totalUsersCount, currentPage]);
 
   return (

@@ -13,8 +13,7 @@ export const useFetchData = () => {
   useEffect(() => {
     setIsLoading(true);
 
-    axios
-      .get(
+    axios.get(
         `https://social-network.samuraijs.com/api/1.0/users?count=5&page=${pageNumber}`
       )
       .then((response) => response.data)
@@ -24,6 +23,8 @@ export const useFetchData = () => {
         setTotal(res.totalCount);
       })
       .catch(() => setIsLoading(false));
+
+      
   }, [pageNumber]);
 
   return { users, isLoading, total, setPageNumber, pageNumber };

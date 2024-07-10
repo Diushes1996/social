@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const Users = ({ users }) => {
   return (
-    <div>
+    <>
       {users.map((u) => (
         <div key={u.id}>
           <div>
@@ -17,9 +17,6 @@ export const Users = ({ users }) => {
                 />
               </NavLink>
             </div>
-            {/* <div>
-                        {u.followed ? <button onClick={() => { props.unfollow(u.id) }}>Unfollow</button> : <button onClick={() => { props.follow(u.id) }}>Follow</button>}
-                    </div> */}
           </div>
           <div>
             <p>{u.name}</p>
@@ -30,6 +27,6 @@ export const Users = ({ users }) => {
           </div>
         </div>
       ))}
-    </div>
+    </>
   );
 };
