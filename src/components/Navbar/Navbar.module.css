@@ -5,8 +5,20 @@
   background-color: #3b3b3b;
   border: 1px solid white;
   color: #d1d1d1;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .active_link {
+  text-decoration: none;
+  color: red;
+}
+
+.just_link {
+  text-decoration: none;
   color: white;
+}
+
+.just_link:hover {
+  color: red;
 }

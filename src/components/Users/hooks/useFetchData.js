@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export const useFetchData = () => {
+
   const [users, setUsers] = useState([]);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -24,7 +25,6 @@ export const useFetchData = () => {
       })
       .catch(() => setIsLoading(false));
 
-      
   }, [pageNumber]);
 
   return { users, isLoading, total, setPageNumber, pageNumber };
