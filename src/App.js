@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import ProfileContainer from "./components/Profile/ProfileContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { UsersContainer } from "./components/Users/UsersContainer";
 import Layout from "./components/Layout";
 import NotFoundPage from "./components/NotFoundPage";
+import { Profile } from "./components/Profile/Profile";
 
 const App = (props) => {
   return (
@@ -15,7 +15,7 @@ const App = (props) => {
           <Route
             index
             element={
-              <ProfileContainer state={props.state} dispatch={props.dispatch} />
+              <Profile state={props.state} dispatch={props.dispatch} />
             }
           />
           <Route

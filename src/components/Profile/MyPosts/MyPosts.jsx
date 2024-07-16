@@ -1,25 +1,20 @@
-import Post from './Post/Post';
+import Post from './Post/Post.jsx'
 import s from './MyPosts.module.css'
+import { usePosts } from '../hooks/usePosts.js';
+import { useMemo } from 'react';
 
-const MyPosts = (props) => {
+export const MyPosts = () => {
 
-  let addPost = () => {
-    props.addPost();
-  }
+  const { posts, refInput, addPost } = usePosts();
 
-  let onPostChange = (e) => {
-    let text = e.target.value;
-    props.onPostChange(text);
-  }
+  let postElements = useMemo(() => posts.map(p => <Post message={p.message} />), [posts])
 
-  let postElements = [props.state.profilePage.posts.map(p => <Post message={p.message} likesCount={p.likesCount} followers={p.followers} id={p.id} />)]
-  
   return (
     <div>
-      <h3>My posts</h3>
+      <h3>My posts:</h3>
       <div>
         <div>
-          <input onChange={onPostChange} value={props.newPostText} className={s.postInput}/>
+          <input ref={refInput} className={s.postInput} />
         </div>
         <div>
           <button onClick={addPost} className={s.buttonPosts}>Add post</button>
@@ -29,5 +24,3 @@ const MyPosts = (props) => {
     </div>
   )
 }
-
-export default MyPosts;

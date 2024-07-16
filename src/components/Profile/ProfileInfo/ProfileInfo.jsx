@@ -1,15 +1,11 @@
-import { Preloader } from "../../common/Preloader/Preloader.js";
 import s from "./ProfileInfo.module.css"
 
-export const ProfileInfo = (props) => {
-    if (!props.profile) {
-      return <Preloader/>
-    }
+export const ProfileInfo = ({ profile }) => {
 
     return (
       <>
         <div>
-          <img src={props.profile.photos.large} alt="" />
+          <img src={profile} alt="" />
         </div>
         <div className={s.profile_status_text}>
           Здесь какой-то статус

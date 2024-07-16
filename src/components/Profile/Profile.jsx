@@ -1,12 +1,17 @@
-import MyPostsContainer from './MyPosts/MyPostsContainer';
+import {MyPosts} from './MyPosts/MyPosts.jsx';
 import { ProfileInfo } from './ProfileInfo/ProfileInfo.jsx';
 import s from './Profile.module.css';
+import { useFetchProfile } from './hooks/useFetchProfile.js';
+import { Preloader } from '../common/Preloader/Preloader.js';
 
-export const Profile = (props) => {
+export const Profile = () => {
+
+  const { isLoading, profile } = useFetchProfile();
+
   return (
     <div className={s.profilePage}>
-      <ProfileInfo profile={props.profile}/>
-      <MyPostsContainer state={props.state} dispatch={props.dispatch}/>
+      {isLoading ? <Preloader /> : <ProfileInfo profile={profile}/>}
+      <MyPosts />
     </div>
   )
 }
