@@ -1,13 +1,13 @@
 import { Switch } from 'antd';
 import { useState } from 'react';
-import s from './Settings.module.css'
+import s from './Settings.module.css';
 
 export const Theme = () => {
 
     const [theme, setTheme] = useState(true)
 
     const onChange = (checked: boolean) => {
-        setTheme()
+        setTheme(checked)
         console.log(`switch to ${checked}`);
       };
 
