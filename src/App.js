@@ -6,6 +6,7 @@ import { UsersContainer } from "./components/Users/UsersContainer";
 import Layout from "./components/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { Profile } from "./components/Profile/Profile";
+import { Settings } from "./components/Settings/Settings";
 
 const App = (props) => {
   return (
@@ -25,6 +26,7 @@ const App = (props) => {
             }
           />
           <Route path="/users" element={<UsersContainer />} />
+          <Route path="/settings" element={<Settings />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
