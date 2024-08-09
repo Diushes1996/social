@@ -1,9 +1,9 @@
 import { Theme } from "./Theme"
 
-export const Settings = () => {
+export const Settings = ({setTheme}) => {
     return (
         <>
-         <Theme/>
+         <Theme className='class' setTheme={setTheme}/>
         </>
     )
 }

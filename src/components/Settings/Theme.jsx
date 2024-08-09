@@ -1,10 +1,7 @@
 import { Switch } from 'antd';
-import { useState } from 'react';
-import s from './Settings.module.css';
+import s from './Theme.module.css';
 
-export const Theme = () => {
-
-    const [theme, setTheme] = useState(true)
+export const Theme = ({setTheme}) => {
 
     const onChange = (checked: boolean) => {
         setTheme(checked)
@@ -13,7 +10,7 @@ export const Theme = () => {
 
     return (
         <>
-            <div className={`${s.themeContainer} ${theme === true ? s.dark : s.light}`}>
+            <div className={s.themeContainer}>
                 <span className={s.text}>Night theme</span>
                 <Switch defaultChecked onChange={onChange} />
             </div>

@@ -8,16 +8,6 @@
     border: 1px solid white;
 }
 
-.dark {
-    background-color: #333;
-    color: white;
-}
-
-.light {
-    background-color: white;
-    color: black;
-}
-
 .text {
     padding: 10px 0px;
     box-sizing: border-box;

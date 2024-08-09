@@ -7,12 +7,16 @@ import Layout from "./components/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { Profile } from "./components/Profile/Profile";
 import { Settings } from "./components/Settings/Settings";
+import { useState } from "react";
 
 const App = (props) => {
+
+  const [theme, setTheme] = useState(true)
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Layout theme={theme}/>}>
           <Route
             index
             element={
@@ -26,7 +30,7 @@ const App = (props) => {
             }
           />
           <Route path="/users" element={<UsersContainer />} />
-          <Route path="/settings" element={<Settings />} />
+          <Route path="/settings" element={<Settings setTheme={setTheme}/>} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
