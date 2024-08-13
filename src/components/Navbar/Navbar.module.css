@@ -3,7 +3,6 @@
   flex-direction: column;
   width: 250px;
   border: 1px solid white;
-  color: #d1d1d1;
   padding: 10px;
   box-sizing: border-box;
 }
@@ -15,6 +14,7 @@
 
 .just_link {
   text-decoration: none;
+  color: inherit;
 }
 
 .just_link:hover {

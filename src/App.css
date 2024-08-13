@@ -22,3 +22,8 @@
   background-color: white;
   color: black;
 }
+
+a,
+a:active {
+  text-decoration: none;
+}
