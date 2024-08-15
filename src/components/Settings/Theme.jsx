@@ -12,7 +12,7 @@ export const Theme = ({setTheme}) => {
         <>
             <div className={s.themeContainer}>
                 <span className={s.text}>Night theme</span>
-                <Switch defaultChecked onChange={onChange} />
+                <Switch defaultChecked={JSON.parse(localStorage.getItem('darkTheme'))} onChange={onChange} />
             </div>
             
         </>

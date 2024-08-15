@@ -13,6 +13,8 @@ const App = (props) => {
 
   const [theme, setTheme] = useState(true)
 
+  localStorage.setItem('darkTheme', theme)
+
   return (
     <BrowserRouter>
       <Routes>
