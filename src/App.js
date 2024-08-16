@@ -7,13 +7,20 @@ import Layout from "./components/Layout";
 import NotFoundPage from "./components/NotFoundPage";
 import { Profile } from "./components/Profile/Profile";
 import { Settings } from "./components/Settings/Settings";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = (props) => {
 
-  const [theme, setTheme] = useState(true)
+  const getInitialTheme = () => {
+    const data = localStorage.getItem('darkTheme')
+    return data ? JSON.parse(data) : theme
+  }
 
-  localStorage.setItem('darkTheme', theme)
+  const [theme, setTheme] = useState(getInitialTheme)
+
+  useEffect(() => {
+    localStorage.setItem('darkTheme', theme)
+  }, [theme])
 
   return (
     <BrowserRouter>
